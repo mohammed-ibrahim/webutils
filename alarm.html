@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <audio id="audio_element">
+    <source src="sound2.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <div id="template" hidden class="card">
+
+      <div class="card" id="card_num_placeholder">
+        <div class="content">
+          <div class="header">
+            <label id="count_placeholder">
+            </label>
+            <label hidden id="end_at_placeholder">
+            </label>
+            <label id="status_placeholder">PENDING
+            </label>
+          </div>
+
+          <div class="meta">Alarm
+          </div>
+
+          <br/>
+          <br/>
+
+          <select id="select_placeholder" class="ui fluid normal dropdown">
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10" selected="selected">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+            <option value="60">1 hr</option>
+            <option value="75">1 hr 15 min</option>
+            <option value="90">1 hr 30 min</option>
+            <option value="120">2 hrs</option>
+            <option value="180">3 hrs</option>
+            <option value="240">4 hrs</option>
+            <option value="300">5 hrs</option>
+          </select>
+          <br/>
+          <div class="ui input">
+            <input type="text" placeholder="Context">
+          </div>
+          <br/>
+          <br/>
+
+          <button id="start_button_placeholder" onclick="startAlarm(this)" class="ui primary button">Start
+          </button>
+
+          <button id="snooze_button_placeholder" onclick="snoozeAlarm(this)" disabled class="ui button">Snooze
+          </button>
+
+          <button id="close_button_placeholder" onclick="closeAlarm(this)" disabled class="ui button">Close
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="ui grid">
+      <div class="four wide column">
+      </div>
+
+      <div class="eight wide column">
+        <div class="ui cards">
+          <div id="placement" class="ui cards">
+
+          </div>          
+        </div>
+      </div>
+      <div class="four wide column">
+      </div>
+    </div>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/dropdown.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/dropdown.min.js"></script>
+    <script type="text/javascript" src="alarm.js"></script>
+    <style>
+    .left_margin {
+      /* margin-left: 30%; */
+      margin: auto;
+    }
+    .central_div {
+
+
+      align-items: center;
+
+    }
+    .button {
+      background-color: aliceblue; /* Green */
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: auto;
+    }
+    .centerdiv {
+      margin: auto;
+      width: 80%;
+      border: 3px solid aliceblue;
+      padding: 10px;
+      text-align: center;
+    }
+    .centerdis {
+      position: relative;
+      width: 300px;
+      width: 50%;
+      height: 200px;
+      height: 80%;
+      z-index: 30;
+      top: 20%;
+      left: 50%;
+      margin: -100px 0 0 -150px;
+      text-align: center;
+    }
+
+    .bigfont {
+      font-size: 25px;
+      border-collapse: collapse;
+      border-bottom: 1px solid #ddd;
+    }
+    .statusbarclass {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    </style>
+  </body>
+  <html>
