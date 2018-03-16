@@ -9,8 +9,8 @@ var N_ALARMS = 15;
 
 
 var colorMap = {
-  "PENDING": "Lavender",
-  "COUNTING": "PeachPuff",
+  "PENDING": "WhiteSmoke",
+  "COUNTING": "AliceBlue",
   "ON_ALARM": "MediumVioletRed"
 }
 
