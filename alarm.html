@@ -27,8 +27,6 @@
           <div class="meta">Alarm
           </div>
 
-          <br/>
-          <br/>
 
           <select id="select_placeholder" class="ui fluid normal dropdown">
             <option value="1">1</option>
@@ -51,25 +49,19 @@
             <option value="240">4 hrs</option>
             <option value="300">5 hrs</option>
           </select>
+
           <br/>
           <div class="ui fluid input">
             <input type="text" placeholder="Context">
           </div>
-          <br/>
-          <br/>
 
-          <button id="start_button_placeholder" onclick="startAlarm(this)" class="ui primary button">Start
-          </button>
-
-          <button id="snooze_button_placeholder" onclick="snoozeAlarm(this)" disabled class="ui button">Snooze
-          </button>
-
-
-
-
-          <button id="close_button_placeholder" onclick="closeAlarm(this)" disabled class="ui button">Close
-          </button>
-
+        </div>
+        <div class="extra content">
+          <div class="ui three buttons">
+            <button id="start_button_placeholder" onclick="startAlarm(this)" class="ui basic green button">Start</button>
+            <button id="snooze_button_placeholder" onclick="snoozeAlarm(this)" disabled class="ui basic blue button">Snooze</button>
+            <button id="close_button_placeholder" onclick="closeAlarm(this)" disabled class="ui basic red button">Close</button>
+          </div>
         </div>
       </div>
     </div>
