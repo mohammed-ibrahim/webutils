@@ -9,8 +9,8 @@ var N_ALARMS = 15;
 
 
 var colorMap = {
-  "PENDING": "WhiteSmoke",
-  "COUNTING": "AliceBlue",
+  "PENDING": "White",
+  "COUNTING": "Lavender",
   "ON_ALARM": "MediumVioletRed"
 }
 
@@ -78,6 +78,10 @@ window.onload = function() {
 
   document.getElementById("placement").innerHTML = buffer;
   $('.content .ui.dropdown').dropdown();
+
+  for (i=0;  i < N_ALARMS ; i++) {
+    updateStatus(ST_PENDING, (i+1).toString());
+  }
 }
 
 function getIdentifier(element) {
