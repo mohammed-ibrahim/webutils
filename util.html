@@ -2,6 +2,20 @@
 <html>
 <body>
 
+  <div class="ui visible sidebar inverted vertical menu">
+      <a class="item" href="#bytes_to_mb">
+        Bytes to Mb
+      </a>
+      <a class="item" href="#utc_to_ist">
+        Utc to Ist
+      </a>
+      <a class="item" href="#readable_time_stamp">
+        Time Stamp
+      </a>
+      <a class="item" href="#unix_time_stamp">
+        Unix Time Stamp
+      </a>
+    </div>
   <br/>
   <br/>
   <br/>
@@ -13,7 +27,7 @@
     </div>
 
     <div class="four wide column">
-      <h1>Bytes <=> Mb</h1>
+      <h1><a name="bytes_to_mb">Bytes to Mb</a></h1>
       <br/>
       <div class="ui fluid input">
         <input id="bytes_holder" type="text" placeholder="Bytes" onchange="bytesToMb()">
@@ -23,23 +37,96 @@
       <div class="ui fluid input">
         <input id="mb_holder" type="text" placeholder="Mb" onchange="mbToBytes()">
       </div>
+
+      <br/>
+      <br/>
+      <br/>
+      <h1><a name="utc_to_ist">Utc to Ist</a></h1>
+      <table class="ui celled table">
+        <thead>
+          <tr><th>UTC</th>
+            <th>IST</th>
+          </tr></thead>
+          <tbody>
+            <tr>   <td>00:00</td>    <td>05:30</td>      </tr>
+            <tr>   <td>00:30</td>    <td>06:00</td>      </tr>
+            <tr>   <td>01:00</td>    <td>06:30</td>      </tr>
+            <tr>   <td>01:30</td>    <td>07:00</td>      </tr>
+            <tr>   <td>02:00</td>    <td>07:30</td>      </tr>
+            <tr>   <td>02:30</td>    <td>08:00</td>      </tr>
+            <tr>   <td>03:00</td>    <td>08:30</td>      </tr>
+            <tr>   <td>03:30</td>    <td>09:00</td>      </tr>
+            <tr>   <td>04:00</td>    <td>09:30</td>      </tr>
+            <tr>   <td>04:30</td>    <td>10:00</td>      </tr>
+            <tr>   <td>05:00</td>    <td>10:30</td>      </tr>
+            <tr>   <td>05:30</td>    <td>11:00</td>      </tr>
+            <tr>   <td>06:00</td>    <td>11:30</td>      </tr>
+            <tr>   <td>06:30</td>    <td>12:00</td>      </tr>
+            <tr>   <td>07:00</td>    <td>12:30</td>      </tr>
+            <tr>   <td>07:30</td>    <td>13:00</td>      </tr>
+            <tr>   <td>08:00</td>    <td>13:30</td>      </tr>
+            <tr>   <td>08:30</td>    <td>14:00</td>      </tr>
+            <tr>   <td>09:00</td>    <td>14:30</td>      </tr>
+            <tr>   <td>09:30</td>    <td>15:00</td>      </tr>
+            <tr>   <td>10:00</td>    <td>15:30</td>      </tr>
+            <tr>   <td>10:30</td>    <td>16:00</td>      </tr>
+            <tr>   <td>11:00</td>    <td>16:30</td>      </tr>
+            <tr>   <td>11:30</td>    <td>17:00</td>      </tr>
+            <tr>   <td>12:00</td>    <td>17:30</td>      </tr>
+            <tr>   <td>12:30</td>    <td>18:00</td>      </tr>
+            <tr>   <td>13:00</td>    <td>18:30</td>      </tr>
+            <tr>   <td>13:30</td>    <td>19:00</td>      </tr>
+            <tr>   <td>14:00</td>    <td>19:30</td>      </tr>
+            <tr>   <td>14:30</td>    <td>20:00</td>      </tr>
+            <tr>   <td>15:00</td>    <td>20:30</td>      </tr>
+            <tr>   <td>15:30</td>    <td>21:00</td>      </tr>
+            <tr>   <td>16:00</td>    <td>21:30</td>      </tr>
+            <tr>   <td>16:30</td>    <td>22:00</td>      </tr>
+            <tr>   <td>17:00</td>    <td>22:30</td>      </tr>
+            <tr>   <td>17:30</td>    <td>23:00</td>      </tr>
+            <tr>   <td>18:00</td>    <td>23:30</td>      </tr>
+            <tr>   <td>18:30</td>    <td>00:00</td>      </tr>
+            <tr>   <td>19:00</td>    <td>00:30</td>      </tr>
+            <tr>   <td>19:30</td>    <td>01:00</td>      </tr>
+            <tr>   <td>20:00</td>    <td>01:30</td>      </tr>
+            <tr>   <td>20:30</td>    <td>02:00</td>      </tr>
+            <tr>   <td>21:00</td>    <td>02:30</td>      </tr>
+            <tr>   <td>21:30</td>    <td>03:00</td>      </tr>
+            <tr>   <td>22:00</td>    <td>03:30</td>      </tr>
+            <tr>   <td>22:30</td>    <td>04:00</td>      </tr>
+            <tr>   <td>23:00</td>    <td>04:30</td>      </tr>
+            <tr>   <td>23:30</td>    <td>05:00</td>      </tr>
+          </tbody>
+        </table>
+        <br/>
+        <br/>
+        <h1><a name="readable_time_stamp">Timestamp</a></h1>
+        <div class="ui fluid input">
+          <input id="ts_txt_holder" type="text" placeholder="Click to Generate" onclick="applyNewTimeStamp()">
+        </div>
+        <br/>
+        <br/>
+        <h1><a name="unix_time_stamp">Unix Timestamp</a></h1>
+        <div class="ui fluid input">
+          <input id="unix_ts_txt_holder" type="text" placeholder="Click to Generate" onclick="applyUnixNewTimeStamp()">
+        </div>
+      </div>
+      <div class="six wide column">
+      </div>
     </div>
-    <div class="six wide column">
-    </div>
-  </div>
 
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
-  <script type="text/javascript" src="util.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+    <script type="text/javascript" src="util.js"></script>
 
-  <style>
-  body {
-    background-color: WhiteSmoke;
-  }
+    <style>
+    body {
+      background-color: WhiteSmoke;
+    }
 
-  </style>
-</body>
-<html>
+    </style>
+  </body>
+  <html>
