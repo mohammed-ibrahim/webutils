@@ -9,8 +9,8 @@ var N_ALARMS = 15;
 
 
 var colorMap = {
-  "PENDING": "White",
-  "COUNTING": "Lavender",
+  "PENDING": "Black",
+  "COUNTING": "SkyBlue",
   "ON_ALARM": "MediumVioletRed"
 }
 
@@ -128,8 +128,9 @@ function updateStatus(state, id) {
   document.getElementById("status_" + id).innerHTML = state;
   var bgkColor = colorMap[state];
   // console.log("bgkColor: ", bgkColor);
-  document.getElementById("status_" + id).style.backgroundColor = bgkColor;
-  document.getElementById("card_num_" + id).style.backgroundColor = bgkColor;
+  document.getElementById("status_" + id).style.color = bgkColor;
+  document.getElementById("count_" + id).style.color = bgkColor;
+  // document.getElementById("card_num_" + id).style.backgroundColor = bgkColor;
 
   if (state != ST_PENDING) {
     var endAt = parseInt(document.getElementById("end_at_" + id).innerHTML);
@@ -140,10 +141,10 @@ function updateStatus(state, id) {
     var nMins = parseInt((difference/60000) % 60);
     var nSecs = parseInt((difference/1000) % 60);
 
-    var text = "Rem: "
-    + nHours.toString() + "h "
-    + nMins.toString() + "m "
-    + nSecs.toString() + "s";
+    var text = "REM: "
+    + nHours.toString() + "H "
+    + nMins.toString() + "M "
+    + nSecs.toString() + "S";
 
     document.getElementById("count_" + id).innerHTML = text;
   } else {
@@ -217,12 +218,39 @@ function counterFor(id) {
       playAudio();
       showOnlyButtons(["snooze_button","close_button"], id);
       updateStatus(ST_ON_ALARM, id);
+      // sendBrowserNotification();
     } else {
 
       updateStatus(status, id);
     }
   }
-
 }
+
+function sendBrowserNotification() {
+  // Let's check if the browser supports notifications
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
+
+  // Let's check whether notification permissions have already been granted
+  else if (Notification.permission === "granted") {
+    // If it's okay let's create a notification
+    var notification = new Notification("Alarm!!");
+  }
+
+  // Otherwise, we need to ask the user for permission
+  else if (Notification.permission !== "denied") {
+    Notification.requestPermission(function (permission) {
+      // If the user accepts, let's create a notification
+      if (permission === "granted") {
+        var notification = new Notification("Alarm!!");
+      }
+    });
+  }
+
+  // At last, if the user has denied notifications, and you
+  // want to be respectful there is no need to bother them any more.
+}
+
 
 window.setInterval(counter, 1000);
