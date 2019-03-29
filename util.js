@@ -36,6 +36,10 @@ function readableTimeStamp() {
       + date.getSeconds().toString();
 }
 
+function doCheck(elementid) {
+  document.getElementById(elementid).checked = true;
+}
+
 function applyNewTimeStamp() {
   var ts = readableTimeStamp()
   document.getElementById("ts_txt_holder").value = ts;
