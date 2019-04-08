@@ -10,6 +10,10 @@ window.onload = function () {
   e.onpropertychange = e.oninput; // for IE8
 };
 
+function onEditUpdate() {
+  console.log("Weeee ha..");
+}
+
 
 function readableTimeStamp() {
   var months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
